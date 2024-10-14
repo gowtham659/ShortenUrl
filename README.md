@@ -29,3 +29,27 @@
   <li>Backend: Golang, Gorilla Mux, Oracle Go Driver (goora)</li>
   <li>Database: Oracle Database</li>
 </ul>
+
+<h2>How It Works:</h2>
+<ol>
+  <li>User submits a long URL via the frontend form.</li>
+  <li>The backend API generates a unique short code, stores the mapping in the Oracle database, and returns the shortened URL.</li>
+  <li>When a user visits the shortened URL, the backend retrieves the original URL from the database and redirects the user to the destination.</li>
+</ol>
+
+<h2>Setup Instructions:</h2>
+<ol>
+  <li>Clone the repository:</li>
+  <pre>git clone https://github.com/your-repo/url-shortener-go-oracle.git</pre>
+  <li>Install dependencies:</li>
+  <pre>
+    go get -u github.com/gorilla/mux
+    go get github.com/godror/godror
+</pre>
+  <li>Set up the Oracle Database with the provided SQL schema.</li>
+  <li>Update the Oracle DB connection string in database/db.go</li>
+  <li>Run the application:</li>
+  <pre>
+    go run main.go</pre>
+  <li>Open your browser and visit http://localhost:8080/ to use the service.</li>
+</ol>
